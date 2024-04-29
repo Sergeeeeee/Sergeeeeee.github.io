@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Order Form</title>
+    <style>
+        body{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background-image: url("orderbg.png"); 
+            background-size: cover;
+            background-position: center;
+            font-weight: bold;
+        }
+        h1 {
+            text-align: center;
+            padding: 10px ; 
+            color: #097D4C; 
+            margin-bottom: 30px; 
+            font-size: 50px;
+            font-weight: bold; 
+        }
+        .center {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(241, 234, 208, 0.5);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 70%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        th, td {
+            border: 1.5px solid #000000;
+            text-align: left;
+            padding: 8px;
+
+        }
+
+        th {
+            background-color: #097D4C;
+        }
+
+        .boton{
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type="submit"],
+        input[type="reset"]{
+            background-color: #097D4C;
+            color: white;
+            border: none;
+            padding: 10px 20px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <form action="outputCall.html" method="POST">
+        <div class="center">
+        <table>
+            <h1>Order Form</h1>
+            <tr>
+                <th colspan="2">Customer Information</th>
+            </tr>
+            <tr>
+                <td><label for="fullname">Full Name:</label></td>
+                <td><input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required></td>
+            </tr>
+            <tr>
+                <td><label for="address">Complete Address:</label></td>
+                <td><input type="text" id="address" name="address" placeholder="Enter your complete address" required></td>
+            </tr>
+            <tr>
+                <td><label for="contact">Contact Number:</label></td>
+                <td><input type="tel" id="contact" name="contact" placeholder="Enter your contact number" required></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email Address:</label></td>
+                <td><input type="email" id="email" name="email" placeholder="Enter your email address" required></td>
+            </tr>
+            <tr>
+                <td><label for="description">Description of how to get to the place:</label></td>
+                <td><textarea rows="5" cols="60" id="description" name="description" required></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="datetime">Date/Time of Delivery:</label></td>
+                <td><input type="datetime-local" id="datetime" name="datetime" required></td>
+            </tr>
+            <tr>
+                <th colspan="2">Order</th>
+            </tr>
+            <tr>
+                <td>Pasta</td>
+                <td>
+                    <select name="pasta">
+                        <option value="carbonara">Carbonara</option>
+                        <option value="pesto">Pesto</option>
+                        <option value="spaghetti">Spaghetti</option>
+                    </select>
+                    <br>
+                    <br>Add-ons:<br>
+                    <input type="checkbox" id="cheese" name="extra_cheese">
+                    <label for="cheese">Extra Cheese</label>
+                    <br>
+                    <input type="checkbox" id="sauce" name="extra_sauce">
+                    <label for="sauce">Extra Sauce</label>
+                    <br>
+                    <br>Quantity: <input type="number" name="quantity" min="0">
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>Burger</td>
+                <td>
+                    <select name="burger">
+                        <option value="single">Single Patty</option>
+                        <option value="double">Double Patty</option>
+                    </select>
+                    <br>
+                    <br>
+                    Add-ons:<br>
+                    <input type="checkbox" id="burger_cheese" name="burger_toppings" value="cheese">
+                    <label for="burger_cheese">With Cheese</label><br>
+                    <input type="checkbox" id="burger_coleslaw" name="burger_toppings" value="coleslaw">
+                    <label for="burger_coleslaw">With Coleslaw</label><br>
+                    <input type="checkbox" id="burger_tomato" name="burger_toppings" value="tomato">
+                    <label for="burger_tomato">With Tomato</label><br>
+                    <input type="checkbox" id="burger_onion" name="burger_toppings" value="onion">
+                    <label for="burger_onion">With Onion</label><br>
+                    <input type="checkbox" id="burger_cucumber" name="burger_toppings" value="cucumber">
+                    <label for="burger_cucumber">With Cucumber</label><br>
+                    <input type="checkbox" id="burger_bacon" name="burger_toppings" value="bacon">
+                    <label for="burger_bacon">With Bacon</label><br>
+                    <br>Quantity: <input type="number" name="fries_quantity" min="0">
+                </td>
+            </tr>
+            <tr>
+                <td>Choice of Bun</td>
+                <td><br>
+                    <select name="bun">
+                        <option value="white">White Bun</option>
+                        <option value="wheat">Wheat Bun</option>
+                        <option value="honey">Honey Oat</option>
+                        <option value="sugar">Sugar Free</option>
+                    </select><br>
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>Fries</td>
+                <td>Size:   
+                    <select name="size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                    <br>
+                    <br>Flavor:<br>
+                    <input type="radio" id="fries_cheese" name="fries_flavor" value="cheese">
+                    <label for="fries_cheese">Cheese</label><br>
+                    <input type="radio" id="fries_sour" name="fries_flavor" value="sour">
+                    <label for="fries_sour">Sour Cream</label><br>
+                    <input type="radio" id="fries_bbq" name="fries_flavor" value="bbq">
+                    <label for="fries_bbq">Barbeque</label><br>
+                    <br>Quantity: <input type="number" name="fries_quantity" min="0">
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td>Drinks</td>
+                <td>Size:   
+                    <select name="size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                    <br>
+                    <br>Flavor:<br>
+                    <input type="radio" id="coke" name="drink_flavor" value="coke">
+                    <label for="coke">Coke</label><br>
+                    <input type="radio" id="coke_zero" name="drink_flavor" value="coke_zero">
+                    <label for="coke_zero">Coke Zero</label><br>
+                    <input type="radio" id="sprite" name="drink_flavor" value="sprite">
+                    <label for="sprite">Sprite</label><br>
+                    <input type="radio" id="iced_tea" name="drink_flavor" value="iced_tea">
+                    <label for="iced_tea">Iced Tea</label><br>
+                    <input type="radio" id="pineapple" name="drink_flavor" value="pineapple">
+                    <label for="pineapple">Pineapple</label><br>
+                    <br>Quantity: <input type="number" name="drink_quantity" min="0">
+                    <br>
+                </td>
+            </tr>
+            
+            
+            <tr>
+                <th colspan="2">Feedback</th>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label for="feedback">Feedback on how to improve the ordering form:</label><br>
+                    <textarea id="feedback" name="feedback" rows="5" cols="50"></textarea><br><br>
+                    <label for="proof">
+                        Upload proof of payment:
+                        <input type="file" id="proof" name="proof" accept="image/*">
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="delivery_rating">Rate our Delivery Service (0-10):</label></td>
+                <td><input type="range" id="delivery_rating" name="delivery_rating" min="0" max="10" step="1" value="5"></td>
+            </tr>
+            <tr>
+                <td><label for="delivery">Delivery or Pick-up:</label></td>
+                <td>
+                    <input type="radio" id="delivery" name="delivery" value="delivery" checked>
+                    <label for="delivery">Delivery</label><br>
+                    <input type="radio" id="pickup" name="delivery" value="pickup">
+                    <label for="pickup">Pick-up</label><br>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <div class="boton">
+        <input type="submit" value="Submit Form">
+        <input type="reset" value="Clear Form">
+    </div>
+    </div>
+    </form>
+    <br>
+</body>
+</html>
